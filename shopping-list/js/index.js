@@ -45,7 +45,7 @@ function removeItem(){
 // Toggles Checked Class on Item
 function checkItem(){
     $('ul').on('click', '.shopping-item-toggle', function(e){
-        this.closest('span.shopping-item').toggleClass('shopping_item__checked')
+        $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked')
     });
 }
 
