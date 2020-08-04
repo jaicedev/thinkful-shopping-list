@@ -13,7 +13,8 @@
 // Hint: you may find it helpful to read up on and use the following jQuery methods: .submit(), preventDefault(), toggleClass(), and closest().
 // When you're done, push your work up to GitHub and publish it on GitHub Pages. Submit a link to your repo below.
 
-
+// Storage for Program Data
+const STORE = [];
 // Add an Item to the List
 function addItem(){
     $('#js-shopping-list-form').submit(function (e) {
@@ -35,8 +36,8 @@ function addItem(){
         }
         $(this).trigger('reset');
 });
-// Removes Item from List
 }
+// Removes Item from List
 function removeItem(){
     $('ul').on('click', '.shopping-item-delete', function(e){
         this.closest('li').remove()
@@ -49,6 +50,10 @@ function checkItem(){
     });
 }
 
-$(addItem)
-$(removeItem)
-$(checkItem)
+function buildList(){
+    addItem();
+    removeItem();
+    checkItem();
+}
+
+$(buildList)
